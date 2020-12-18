@@ -1,0 +1,43 @@
+// 
+// Meu Rancho Portal (Bootstrap Theme) main styles
+//
+
+// Bootstrap core functions
+@import '~bootstrap/scss/functions';
+
+// App functions
+@import '../meurancho/portal/functions';
+// App variables
+@import '../meurancho/portal/variables';
+// App specific variables (overrides above)
+@import '../meurancho/portal/variables/application';
+
+// Meu Rancho Custom fonts, managed on /variables/_application.scss
+@import '../meurancho/portal/fonts';
+
+// Bootstrap core
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+
+// App mixins
+@import '../meurancho/portal/mixins';
+
+// Bootstrap core components
+@import '../meurancho/portal/bootstrap';
+
+// App components
+@import '../meurancho/portal/reboot';
+@import '../meurancho/portal/root';
+@import '../meurancho/portal/utilities';
+@import '../meurancho/portal/components';
+
+// Vendor libs scss
+//@import '../meurancho/libs';             
+
+//
+// Import Bootstrap and All its default variables
+// Bootstrap version: 4.5
+//
+
+//@import '~bootstrap/scss/bootstrap.scss';

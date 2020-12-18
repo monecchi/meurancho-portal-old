@@ -1,0 +1,116 @@
+// Fake Item Price Input Field
+
+.price-and-discount-fields {
+    margin-right: 37.92px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+
+@media (min-width: 1024px) {
+    .price-and-discount-fields {
+        flex-direction: row;
+        margin-right: 0px;
+    }
+}
+
+.price-and-discount-fields__promotional-price {
+    margin: auto;
+    height: 40px;
+    text-decoration: line-through;
+}
+
+.price-and-discount-fields__form {
+    display: flex;
+    align-items: center;
+    min-width: 128px;
+}
+
+@media (min-width: 1024px) {
+    .price-and-discount-fields__form {
+        min-width: 100px;
+    }
+}
+
+.price-and-discount-fields__promotional-field input {
+    border: none;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    background-color: rgb(242, 242, 242);
+}
+
+.price-and-discount-fields__value-field input {
+    width: 136px;
+    font-size: 18px;
+    text-align: left;
+    height: 48px;
+}
+
+.price-and-discount-fields__price-fake,
+.price-and-discount-fields__promotional-price-fake {
+    width: 50%;
+}
+
+.price-and-discount-fields__promotional-price-fake {
+    display: flex;
+    align-items: center;
+}
+
+.price-and-discount-fields__promotional-price-icon {
+    padding: 0px 8px;
+    background-color: rgb(242, 242, 242);
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+@media (min-width: 1024px) {
+    .price-and-discount-fields__promotional-price-icon {
+        border-radius: 4px 0px 0px 4px;
+    }
+}
+
+.category-item-price-fields-fake {
+    //display: block;
+    width: 100%;
+    height: calc(1.5em + 1.5rem + 2px);
+    padding: 0.75rem 1.25rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #8492A6;
+    background-color: #FFF;
+    background-clip: padding-box;
+    border: 1px solid #E0E6ED;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);
+}
+
+@media (min-width: 768px) {
+    .category-item-price-fields-fake {
+        min-width: 128px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .category-item-price-fields-fake {
+        min-width: 100px;
+    }
+}
+
+.category-item-price-fields-fake--disabled {
+    background-color: rgb(242, 242, 242);
+    width: auto;
+    cursor: auto;
+}
+
+.category-item-price-fields-fake--promotional-price {
+    width: 100%;
+    font-size: 14px;
+    cursor: not-allowed;
+    border: none;
+    justify-content: flex-end;
+    height: 40px;
+    text-decoration: line-through;
+    min-width: 99px;
+}

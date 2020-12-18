@@ -1,0 +1,65 @@
+// Action Bar Component
+
+.action-bar {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    min-height: 72px;
+    padding: 8px 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: 0 -2px 6px 0 rgba(0,0,0,.1);
+    z-index: 99;
+    transition: transform cubic-bezier(.8,.25,0,.8),opacity cubic-bezier(.8,.25,0,.8);
+}
+
+.category-prices-changed-action-bar {
+    height: 80px;
+    background-color: #f2f2f2;
+}
+
+.category-prices-changed-action-bar__container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.category-prices-changed-action-bar__actions {
+    display: flex;
+    align-items: center;
+    margin-left: 40px;
+}
+
+.action-bar--invisible {
+    transform: translateY(100%);
+    opacity: 0;
+    box-shadow: none;
+}
+
+@media (min-width: 768px) {
+    .main .action-bar {
+        width: calc(100% - 280px);
+    }
+}
+
+.main .action-bar-container {
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
+@media (max-width: 767px) {
+    .main .action-bar-container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+
+@media (min-width: 992px) {
+    .main .action-bar-container {
+        max-width: 1292px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

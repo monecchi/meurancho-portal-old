@@ -1,0 +1,130 @@
+// App Specific Variables
+//
+// Variables should follow the `$component-state-property-size` formula for
+// consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
+
+// Fonts
+//
+// uncomment and replace the $font and $font-family-custom-sans-serif value with any URL and font family name from Google Fonts
+//
+
+// 
+// Custom variables
+//
+
+$font-source-google: "https://fonts.googleapis.com/css?family=Nunito:300,400,600,700"; // Google Fonts 'Nunito'
+$font-family-custom-sans-serif: "Nunito", sans-serif;
+
+$font-source-adobe-soleil: "https://use.typekit.net/ljl1mzv.css" !default;
+$font-source-adobe-europa: "https://use.typekit.net/ynp2nrv.css" !default; // Adobe Fonts 'europa'
+$font-source-adobe-unitext: "https://use.typekit.net/ljl1mzv.css" !default; // Adobe Fotnts 'unitext'
+$font-source-adobe-brandon-grotesque: "https://use.typekit.net/elk3ftg.css" !default; // Adobe Fotnts 'brandon-grotesque'
+
+$font-family-soleil: "soleil", sans-serif !default;
+$font-family-europa: "europa", sans-serif !default;
+$font-family-unitext: "unitext", sans-serif !default;
+$font-family-brandon-grotesque: "brandon-grotesque", sans-serif !default;
+
+$font: $font-source-adobe-soleil; // $font-source-google
+
+// Main Font Family
+//
+$font-family-base: $font-family-soleil !default; // $font-family-europa, $font-family-custom-sans-serif
+
+// Icon Font
+
+$mriconFamily: "RestoPizza" !default;
+$mriconFamilyAlt: "Font Awesome 5 Pro" !default;
+
+$brand-icon-prefix:   "icon" !default;
+$brand-icon-fw-width: (20em / 16);
+
+// Transition
+$transition-time: .2s;
+$transition-time-fast: .1s;
+$transition-time-slow: .4s;
+
+// Sections
+
+$spacer: 1rem !default;
+$default-section-padding: $spacer !default;
+
+// Shadows
+$gray-200: #EFF2F7 !default;
+$shadow-3d: .5rem .5rem 0 rgba($gray-200,.5);
+
+// Z-index master list
+//
+// Warning: Avoid customizing these values. They're used for a bird's eye view
+// of components dependent on the z-axis and are designed to all work together.
+
+$zindex-dropdown:                   1000;
+$zindex-sticky:                     1020;
+$zindex-fixed:                      1030;
+$zindex-modal-backdrop:             1040;
+$zindex-modal:                      1050;
+$zindex-popover:                    1060;
+$zindex-tooltip:                    1070;
+
+// Custom Grid breakpoints
+// References from: https://boosted.orange.com/v4-alpha/layout/grid/ and https://github.com/thunderblaster/bootstrap-xxl/blob/xxl/scss/_variables.scss
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$grid-breakpoints: ();
+$grid-breakpoints: map-merge(
+  (
+    xs: 0,
+    sm: 320px, // bootstrap default is sm: 480px
+    md: 768px,
+    lg: 980px,
+    xl: 1220px,
+    xxl: 1366px,
+    xxxl: 3000px
+  ),
+  $grid-breakpoints
+);
+
+@include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
+@include _assert-starts-at-zero($grid-breakpoints);
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: ();
+$container-max-widths: map-merge(
+  (
+    sm: 468px,
+    md: 744px,
+    lg: 960px,
+    xl: 1200px,
+    xxl: 1320px,
+    xxxl: 2500px
+  ),
+  $container-max-widths
+);
+@include _assert-ascending($container-max-widths, "$container-max-widths");
+
+$container-fluid-margin-widths: (
+  xs: 1.25%,
+  sm: 1.25%,
+  md: 1.5625%,
+  lg: 3.125%,
+  xl: 3.125%,
+  xxl: 4.16667%,
+  xxxl: 4.16667%
+);
+
+// Skins
+//
+// We recommend that all the variables that are staying at the core of your product's styleguide (colors, typography) to be separated in a custom skin
+// you can start by using one of the pre-built ones or, simply, create a new one
+// learn more about how to create your skin by reading the theme's documentation.
+//
+// Below you can find 3 pre-defined skins. You can uncomment any one of them and compile Sass using the build tools
+
+// @import "../skins/default/dark";
+// @import "../skins/blue/light";
+// @import "../skins/blue/dark";
+// @import "../skins/red/light";

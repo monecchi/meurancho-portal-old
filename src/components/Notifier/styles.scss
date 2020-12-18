@@ -1,0 +1,30 @@
+// Toastify
+
+.Toastify__toast-container {
+    width: 23%;
+    max-width: 26%;
+}
+
+.Toastify__toast {
+    border-radius: 0.35rem;
+}
+
+.Toastify__toast--success {
+    color: #d7f0e5;
+    background-color: #36B37E;
+}
+
+.Toastify__toast--error {
+    background: #ef2840;
+}
+
+// change toastify position only on cardapio page
+@media (min-width: 1560px) {
+    .cardapio {
+        &.base-page {
+            .Toastify__toast-container--bottom-left {
+                left: 380px;
+            }
+        }
+    }
+}

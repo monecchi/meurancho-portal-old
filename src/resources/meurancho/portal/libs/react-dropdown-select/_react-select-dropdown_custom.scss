@@ -1,0 +1,50 @@
+// Custom styles for react-dropdown-select
+
+.react-dropdown-select {
+
+    border: 1px solid #E0E6ED !important;
+
+    &:focus,
+    &:focus-within {
+        outline: 0;
+        box-shadow: none !important;
+        border: 1px solid #ef2840 !important;
+    }
+}
+
+.react-dropdown-select-dropdown-handle {
+    svg {
+        width: 22px !important;
+        height: 22px !important;
+    }
+}
+
+// Dropdown items div wrapper
+.react-dropdown-select-dropdown {
+    border-radius: 0.25rem !important;
+    border: 1px solid #EFF2F7 !important;
+    box-shadow: 0 0 1.25rem rgba(31, 45, 61, 0.08) !important;
+}
+
+// Dropdown items 
+.react-dropdown-select-item {
+    color: #273444 !important;
+    padding: 0.75rem 1.2rem !important;
+    border: 1px solid #EFF2F7 !important;
+
+    &:hover, &:focus {
+        color: #fc0e36 !important;
+        background: #fff !important;
+    }
+
+    &.react-dropdown-select-item-selected, &.react-dropdown-select-item-active {
+        font-weight: 700;
+        color: #fc0e36 !important;
+        background: none !important;
+    }
+    &.react-dropdown-select-item-disabled {
+        color: #c0ccda !important;
+        text-decoration: none;
+        background-color: #FAFBFE !important;
+    }
+}

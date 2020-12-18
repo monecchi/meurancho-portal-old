@@ -1,0 +1,282 @@
+//
+// Common Styles for Main Dashboard Pages
+// 
+.main {
+    min-height: 100%;
+    height: 100%;
+}
+
+.main--no-sidebar-scroll {
+    height: unset;
+}
+
+.main__drawer {
+    position: fixed;
+    width: 280px;
+    height: 100%;
+    top: 0;
+    left: -280px;
+    right: auto;
+    box-shadow: 14px 0 32px 0 rgba(0, 0, 0, 0.4);
+    transform: translate(-280px, 0);
+    transition-duration: 300ms;
+    backface-visibility: hidden;
+}
+
+.main__drawer-sidebar {
+    height: 100%;
+}
+
+.main__header {
+    transition: left 300ms;
+}
+
+.main__body {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    transition-duration: 300ms;
+    backface-visibility: hidden;
+}
+
+@media (max-width: 767px) {
+    .main__body {
+        padding-top: 64px;
+        flex-wrap: wrap;
+    }
+}
+
+.main__sidebar {
+    position: fixed;
+    left: 0;
+    top: 80px;
+    bottom: 0;
+    width: 280px;
+    max-width: 280px;
+    flex: 0 0 280px;
+    z-index: 1000;
+}
+
+.main__sidebar--no-sidebar-scroll {
+    position: unset;
+    z-index: unset;
+}
+
+.main__sidebar--no-top-bar {
+    top: 0;
+}
+
+@media (max-width: 767px) {
+    .main__sidebar {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) {
+    .main__sidebar {
+        padding-top: 16px;
+    }
+
+    .main__sidebar--no-top-bar {
+        padding-top: 0;
+    }
+}
+
+.main__container {
+    min-height: 100%;
+    width: 100vw;
+}
+
+@media (min-width: 768px) {
+    .main__container {
+        width: calc(100% - 280px);
+        flex: 0 0 calc(100% - 280px);
+        padding-top: 80px;
+        margin-left: 280px;
+    }
+
+    .main__container--no-sidebar-scroll {
+        margin-left: 0;
+    }
+
+    .main__container--no-top-bar {
+        padding-top: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .main__container {
+        width: 100vw;
+    }
+}
+
+@media (min-width: 768px) {
+    .main .action-bar {
+        width: calc(100% - 280px);
+    }
+}
+
+.main .action-bar-container {
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
+@media (max-width: 767px) {
+    .main .action-bar-container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+
+@media (min-width: 992px) {
+    .main .action-bar-container {
+        max-width: 1292px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 767px) {
+    .main--locked .main__header {
+        left: 280px;
+    }
+
+    .main--locked .main__drawer {
+        transform: translate(280px, 0);
+    }
+
+    .main--locked .main__body {
+        position: fixed;
+        transform: translate(280px, 0);
+    }
+
+    .main--locked .main__body:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: transparent;
+        transition: background-color 300ms;
+        z-index: 1000;
+    }
+}
+
+// 
+// Base page styles
+//
+
+.base-page {
+    background: #ffffff;
+
+    .link {
+        font-weight: bold;
+    }
+
+    a {
+        &:not(.btn){
+            font-weight: 600;
+        }
+    }
+}
+
+.base-page-header {
+    padding-left: 32px;
+    padding-right: 32px;
+    width: 100%;
+    padding-top: 32px;
+}
+
+@media (max-width: 767px) {
+    .base-page-header {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+
+@media (min-width: 992px) {
+    .base-page-header {
+        max-width: 1292px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.base-page-header__container {
+    position: relative;
+}
+
+.base-page-header--padded .base-page-header__container {
+    padding-bottom: 32px;
+}
+  
+
+.base-header-title {
+    position: relative;
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    margin-bottom: 0;
+}
+
+.base-header-subtitle {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.77;
+    margin-top: 8px;
+    margin-bottom: 0;
+}
+
+.base-page-content {
+    margin: 0;
+    padding: 0;
+    padding-top: 32px;
+    padding-bottom: 104px;
+    max-width: none;
+}
+
+.base-page-content__container {
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
+@media (max-width: 767px) {
+    .base-page-content__container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+
+@media (min-width: 992px) {
+    .base-page-content__container {
+        max-width: 1292px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.base-page-content--unpadded {
+    padding-bottom: 0;
+}
+
+//
+// restaurant provider
+//
+
+.active-restaurant-provider {
+    min-height: 100%;
+    height: 100%;
+}
+
+.active-restaurant-provider__loading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+}
+  

@@ -1,0 +1,237 @@
+//
+// Sidebar
+//
+.sidebar {
+    background: #f2f2f2;
+}
+
+.sidebar--no-scroll {
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.sidebar__divider {
+    width: 248px;
+    height: 1px;
+    background-color: #dcdcdc;
+    border-radius: 1px;
+    margin: 0 16px;
+    margin-top: 16px;
+}
+
+// Logo
+.sidebar-ifood-logo {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+    margin-bottom: 16px;
+}
+
+.sidebar-ifood-logo__image {
+    height: 40px;
+}
+
+.sidebar-meurancho-logo {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+    margin-bottom: 16px;
+}
+
+.sidebar-meurancho-logo__image {
+    height: 36px;
+}
+
+
+//
+// Sidebar groups
+//
+.sidebar__groups-container {
+    margin-top: 1.2rem;
+}
+
+.sidebar__groups-container .sidebar-group:first-child {
+    padding-top: 0px;
+}
+
+.sidebar-group:empty {
+    display: none;
+}
+
+.sidebar-group {
+    padding: 1.2rem 0; // 8px 0;
+  span {
+        &.sidegroup-title {
+            display: flex;
+            margin-left: 0;
+            padding: 8px 12px;
+            background-color: #f7f7f7;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: .06em;
+            font-size: 80%;
+        }
+    }
+}
+
+//
+// Sidebar icon links
+//
+
+.menu-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+        list-style: none;
+    }
+}
+
+.sidebar-internal-link {
+    display: flex;
+    align-items: center;
+    min-height: 40px;
+    padding: 8px 12px;
+    margin: 0 12px;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #3e3e3e;
+
+    .sidebar-icon {
+        svg {
+            path {
+                opacity: 0.85;
+            }
+        }
+    }
+}
+
+.sidebar-internal-link__label {
+    font-size: 1rem;
+    margin-left: 12px;
+}
+
+.sidebar-internal-link:not(.secondary) {
+    font-weight: 400;
+}
+
+.sidebar-internal-link:hover {
+    cursor: default;
+    text-decoration: none;
+}
+
+.sidebar-internal-link:hover:not(.sidebar-internal-link--active) {
+    cursor: pointer;
+    border-color: #ffffff;
+    background: rgba(255, 255, 255, 0.5);
+    color: #3e3e3e;
+}
+
+.sidebar-internal-link--is-self-setup,
+.sidebar-internal-link--is-self-setup:visited,
+.sidebar-internal-link--is-self-setup:focus {
+    color: #3e3e3e;
+}
+
+.sidebar-internal-link--is-self-setup .sidebar-icon__image {
+    filter: none;
+}
+
+.sidebar-internal-link--active {
+    margin: 0;
+    padding-left: 20px;
+    border-radius: 0;
+    border-left: 4px solid #ea1d2c;
+    color: "#ea1d2c";
+    background: #e9e9e9;
+
+    .sidebar-icon {
+        svg {
+            path {
+                fill: inherit !important; 
+            }
+        }
+    }
+    
+}
+
+.sidebar-internal-link--active .sidebar-icon__image {
+    filter: invert(17%) sepia(37%) saturate(6018%) hue-rotate(342deg) brightness(121%) contrast(103%);
+}
+
+.sidebar-internal-link--active,
+.sidebar-internal-link--active:visited,
+.sidebar-internal-link--active:focus {
+    color: #ea1d2c;
+}
+
+.sidebar-internal-link--active.sidebar-internal-link--is-self-setup {
+    border-left: 4px solid #50a773;
+}
+
+.sidebar-internal-link--active.sidebar-internal-link--is-self-setup .sidebar-icon__image {
+    filter: none;
+}
+
+.sidebar-internal-link--active .sidebar-internal-link__label {
+    font-weight: 700;
+}
+
+// 
+// Sidebar restaurant info icons
+// 
+
+.sidebar-icon {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    display: flex;
+}
+
+.sidebar-icon__image--DEFAULT {
+    filter: invert(22%) sepia(2%) saturate(158%) hue-rotate(86deg) brightness(102%) contrast(93%);
+}
+
+.sidebar-icon__image--WHITE {
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(299deg) brightness(102%) contrast(102%);
+}
+
+.sidebar-icon__image--RED {
+    filter: invert(17%) sepia(37%) saturate(6018%) hue-rotate(342deg) brightness(121%) contrast(103%);
+}
+
+.sidebar-icon__image--NONE {
+    filter: none;
+}
+
+
+.sidebar-badge-warn {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    font-size: 10px;
+    line-height: 1.5;
+    font-weight: 700;
+    color: #ea1d2c;
+}
+
+.sidebar-badge-warn,
+.sidebar-badge-warn * {
+    text-transform: uppercase;
+}
+
+.sidebar-badge-warn__content {
+    padding: 2px 8px;
+    border-radius: 17px;
+    border: 1px solid #ea1d2c;
+}
+
+.sidebar-badge-warn__content--error {
+    color: #ffffff;
+    border-color: #ff7752;
+    background-color: #ff7752;
+}
+  

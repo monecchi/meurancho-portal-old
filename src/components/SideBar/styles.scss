@@ -1,0 +1,62 @@
+// ProSidebar scss variables overrides
+$sidebar-bg-color: #EF2840;
+$sidebar-color: #fafafa;
+$sidebar-width: 280px;
+$sidebar-collapsed-width: 80px;
+$highlight-color: #ffffff;
+$submenu-bg-color: #EF2840;
+$submenu-bg-color-collapsed: #EF2840;
+$icon-bg-color: $sidebar-bg-color;
+$icon-size: 1.2rem;
+$breakpoint-xs: 480px;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+// ProSidebar defautl styles
+@import '~react-pro-sidebar/dist/scss/styles.scss';
+
+// styles overrides 
+
+.pro-sidebar {
+
+    height: auto !important;
+
+    .pro-menu {
+        font-size: 1rem;
+
+        a:hover {
+            color: #ffffff !important;
+        }
+    }
+
+    .pro-sidebar-inner {
+
+        .pro-sidebar-header {
+            height: 80px;
+            line-height: 80px;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+
+            .app-logo {
+                height: 1.6rem;
+            }
+
+            &.sidebar-header-dark {
+                .restaurant-logo {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    .app-logo {
+                        filter: brightness(0) invert(1);
+                    }
+                }
+
+            }
+        }
+    }
+}
