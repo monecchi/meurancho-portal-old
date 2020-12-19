@@ -1,7 +1,8 @@
-import React, { useState, useEffect, useLayoutEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-router-dom";
 
 import { useMediaQuery } from 'beautiful-react-hooks';
+import useOnClickOutside from './hooks/useOnClickOutside';
 
 //
 // Layout Components
@@ -137,28 +138,31 @@ const routes = [
 // App 
 const App = (props) => {
 
+  const sidenavRef = useRef();
+
   const [showSideNav, setShowSideNav] = useState(false);
+
+  useOnClickOutside(sidenavRef, () => setShowSideNav(false));
   
   const isMobile = useMediaQuery('(max-width: 569px)');
 
+  // Set toggled state on menu toggle click with useCallback
+  const toggleSideNav = useCallback(() => setShowSideNav(value => !value), []);
+  console.log('SideNav toggled?: ' + showSideNav);
+
   // Set toggled state on menu toggle click
-  //const toggleSideNav = useCallback(() => setShowSideNav(value => !value), []);
-  //const toggleSideNav = () => setShowSideNav(!showSideNav);
+  // const toggleSideNav = () => {
+  //   setShowSideNav(!showSideNav);
+  // }
 
-  const toggleSideNav = () => {
-    setShowSideNav(!showSideNav);
-    console.log('Show SideNav: ' + showSideNav);
-  }
-
-  const toggleContainer = useCallback(() => {
-    if (!showSideNav) {
-      document.getElementsByClassName("main")[0].classList.remove("main--locked");
-      //
-      //main__sidebar main__sidebar--no-top-bar main__sidebar--no-sidebar-scroll
-    } else {
-      document.getElementsByClassName("main")[0].classList.add("main--locked");
-    }
-  }, [showSideNav])
+  // const toggleDrawer = useCallback(value => {
+  //   if (!value) {
+  //     document.getElementsByClassName("main")[0].classList.remove("main--locked");
+  //   } else {
+  //     // cleanup on unmount, remove css class
+  //     document.getElementsByClassName("main")[0].classList.add("main--locked");
+  //   }
+  // }, [])
 
   // Add, Remove div.main div.sidebar css classes according to toogled State
   // const toggleContainer = (value) => {
@@ -171,21 +175,19 @@ const App = (props) => {
   //     }
   // }
 
-  useLayoutEffect(() => {
+  const onChangeRouteHideSideNav = () => {
+    console.log('Current URL: ' + window.location.pathname);
+  }
+
+  useEffect(() => {
     if (!showSideNav) {
       document.getElementsByClassName("main")[0].classList.remove("main--locked");
-      //
-      //main__sidebar main__sidebar--no-top-bar main__sidebar--no-sidebar-scroll
-    } else {
-      document.getElementsByClassName("main")[0].classList.add("main--locked");
     }
+    // cleanup on unmount, remove css class
+    return () => {
+      document.getElementsByClassName("main")[0].classList.add("main--locked");
+    };
   }, [showSideNav]);
-
-
-  // const [clickCapture, SetClickCapture] = useState(false);
-  // const handleClickCapture = () => {
-  //   SetClickCapture(!clickCapture);
-  // }
 
   return (
     <Router>
@@ -193,7 +195,7 @@ const App = (props) => {
       <div>
         <div className="main main--no-sidebar-scroll">
           {isMobile && (<HeaderMobile onClick={toggleSideNav} showSideNav={showSideNav}  />)}
-          {isMobile && (<SideNavOnDrawer isMobile={isMobile} />)}
+          {isMobile && (<div className="clickoutsidebondary" ref={sidenavRef}><SideNavOnDrawer isMobile={isMobile} toggleSideNav={toggleSideNav} /></div>)}
           <div className="main__body">
               {/*<SideBar />*/}
               {!isMobile && (<SideNav isMobile={isMobile} />)}
@@ -211,6 +213,7 @@ const App = (props) => {
                     path={route.path}
                     exact={route.exact}
                     children={<route.sidebar />}
+                    onUpdate={()=>onChangeRouteHideSideNav}
                   />
                 ))}
               </Switch>
@@ -228,7 +231,6 @@ const App = (props) => {
                 ))}
               </Switch>
           </div>
-          <div className="click-capture"></div>
         </div>
       </div>
     </div>

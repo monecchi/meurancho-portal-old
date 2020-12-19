@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useLayoutEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import SideNavMenu from './Menu';
 import RestaurantStatus from './RestaurantStatus';
 
@@ -88,11 +88,7 @@ export const navigationItems = async () => {
 //
 const SideNav = (props) => {
 
-    const node = useRef();
-
     const { isMobile } = props;
-
-    const [toggled, setToggled] = useState(false);
 
     const [storeOpen, setStoreOpen] = useState(true);
 
@@ -112,36 +108,6 @@ const SideNav = (props) => {
         });
     }
 
-    // Set toggled state on menu toggle click
-    const toggleSideNav = (toggled) => {
-        setToggled(!toggled);
-        console.log('SideNav toggled: ' + toggled);
-    }
-
-    // Add, Remove div.main div.sidebar css classes according to toogled State
-    const toggleContainer = (value) => {
-        if (!value) {
-            document.getElementsByClassName("main")[0].classList.remove("main--locked"); 
-            //
-            //main__sidebar main__sidebar--no-top-bar main__sidebar--no-sidebar-scroll
-        } else {
-            document.getElementsByClassName("main")[0].classList.add("main--locked");
-        }
-    }
-
-    useLayoutEffect(()=>{
-        toggleContainer(toggled);
-    }, [toggled]);
-
-    const handleClickOutside = e => {
-        if (node.current.contains(e.target)) {
-            // inside click
-            return;
-        }
-        // outside click
-        setToggled(false);
-    };
-
     useEffect(() => {
 
         navigationItems().then(res => {
@@ -158,20 +124,12 @@ const SideNav = (props) => {
         });
 
         console.log('Restaurante aberto? : ' + storeOpen.toString())
-        //setTimeout(() => {
 
-        //}, 1500);
-
-        document.addEventListener("mousedown", handleClickOutside);
-
-        return () => {
-            document.removeEventListener("mousedown", handleClickOutside);
-        };
     }, [storeOpen]);
 
     return (
         <>
-            <div id="sidebar" className={(!isMobile ? "sidebar main__sidebar main__sidebar--no-top-bar main__sidebar--no-sidebar-scroll" : "sidebar")} ref={node}>
+            <div id="sidebar" className={(!isMobile ? "sidebar main__sidebar main__sidebar--no-top-bar main__sidebar--no-sidebar-scroll" : "sidebar")}>
 
                 <button onClick={() => handleRestaurantIsOpen(storeOpen)} className={storeOpen ? 'toggle-is-open opened' : 'toggle-is-open' }><span>Abrir / Fechar</span></button>
 
