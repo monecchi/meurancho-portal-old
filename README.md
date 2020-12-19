@@ -1,8 +1,8 @@
 # meurancho-portal
 
-Portal Meu Rancho Pizzaria - A React Backend Project for managing a restaurant business marketplace website, powered by nodejs + Express + MongoDB
+Portal Meu Rancho Pizzaria - A Restaurant's Marketplace Admin Panel powered by ReactJS
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). It relies on `meurancho-api` server to perform its crud operations.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). It relies on `meurancho-api` server in order to perform its crud operations. That is a project apart, powered by Nodejs + Express + MongoDB & Docker.
 
 ## API set up
 
@@ -15,13 +15,17 @@ On the project's root directory find the files:
 `/.env.development` - development enviroment variables
 
 ```bash
-# Where to point requests to API
+# Where to point API requests to
 REACT_APP_BASE_API_URL=http://localhost
-# If on developing locally, which port?
+# If developing locally, on which port?
 REACT_APP_BASE_API_PORT=3333
-# defines on which --port `react-scripts start` runs
+# Defines on which --port `react-scripts start` runs
 PORT=3001
 ```
+
+## Components & UI
+
+The project uses [React Bootstrap](https://react-bootstrap.netlify.app/) components on most of its UI, with some major custom styles involved. A few other third party libraries and components are used througout the project. Please refer to the project's `package.json` to get a glimpse about these other libraries and packages.
 
 ## Available Scripts
 
