@@ -10,7 +10,7 @@ The project defines a default API service configuration using axios. In order to
 
 On the project's root directory find the files:
 
-`/.env` - production enviroment variables
+`/.env` - production enviroment variables - please refer to .env.example
 
 `/.env.development` - development enviroment variables
 
