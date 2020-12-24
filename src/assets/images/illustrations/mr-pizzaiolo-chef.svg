@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="600" height="396" viewBox="0 0 600 396">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="0.85" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fed298"/>
+      <stop offset="1" stop-color="#f0ebe6"/>
+    </linearGradient>
+    <clipPath id="clip-mr-pizzaiolo-chef">
+      <rect width="600" height="396"/>
+    </clipPath>
+  </defs>
+  <g id="mr-pizzaiolo-chef" clip-path="url(#clip-mr-pizzaiolo-chef)">
+    <rect id="Retângulo_1" data-name="Retângulo 1" width="555" height="405" rx="18" transform="translate(23 15)" fill="#f0ebe6"/>
+    <path id="lamp-cable" d="M0,0H4V83H0Z" transform="translate(185 -5)" fill="#d9d4d0"/>
+    <path id="Caminho_3" data-name="Caminho 3" d="M0,23a23,23,0,0,1,46,0V46H0Z" transform="translate(164 78)" fill="#fff"/>
+    <path id="lamp-light" d="M15.125,0H60.963L77,31H0Z" transform="translate(149 121)" fill="url(#linear-gradient)"/>
+    <path id="lamp-detail" d="M0,0H46l.963,2L-.794,1.916Z" transform="translate(164 121)" fill="#fed298"/>
+    <path id="Caminho_12" data-name="Caminho 12" d="M18,0H0V22H18Z" transform="translate(304 174)" fill="#fff"/>
+    <path id="Caminho_13" data-name="Caminho 13" d="M48.231,17.678a7.7,7.7,0,1,1,0,15.244V37.4A17.569,17.569,0,0,1,30.692,55H17.538A17.569,17.569,0,0,1,0,37.4V0H48.231Z" transform="translate(288 119)" fill="#fed298" fill-rule="evenodd"/>
+    <path id="Caminho_14" data-name="Caminho 14" d="M4.385,3.389V0H52.615V12.959H57C49.153,26.935,24.064,29.08,17.518,10.994c0,.54-3.006,8.8-17.518,8.8Z" transform="translate(284 123)" fill="#ae8f67" fill-rule="evenodd"/>
+    <path id="Caminho_15" data-name="Caminho 15" d="M0,11.039a11.04,11.04,0,0,0,6.618,10.12V85H68.382V21.159A11.042,11.042,0,0,0,63.971,0H11.029A11.034,11.034,0,0,0,0,11.039Z" transform="translate(275 36)" fill="#fff"/>
+    <path id="Caminho_16" data-name="Caminho 16" d="M0,0V64H62V0" transform="translate(282 57)" fill="none" stroke="#f0ebe6" stroke-width="4.4"/>
+    <path id="Caminho_17" data-name="Caminho 17" d="M57,0H0V4H57Z" transform="translate(284 105)" fill="#ef2840"/>
+    <path id="Caminho_18" data-name="Caminho 18" d="M57,0H0V4H57Z" transform="translate(284 97)" fill="#ef2840"/>
+    <path id="Caminho_19" data-name="Caminho 19" d="M13,13A13,13,0,0,0,26,0H0A13,13,0,0,0,13,13Z" transform="translate(299 156)" fill="#fff" fill-rule="evenodd"/>
+    <path id="Caminho_20" data-name="Caminho 20" d="M32.411,18.357H55.194a8.819,8.819,0,0,1,0,17.639H20.008L.575,14.674a2.207,2.207,0,0,1,.07-3.045L11.612.646a2.2,2.2,0,0,1,3.114,0Z" transform="translate(412 291)" fill="#fed298" fill-rule="evenodd"/>
+    <path id="Caminho_21" data-name="Caminho 21" d="M0,0,76,90" transform="translate(343 207)" fill="none" stroke="#fff" stroke-linejoin="round" stroke-width="26.4"/>
+    <path id="Caminho_22" data-name="Caminho 22" d="M60,0,0,58.881,38.39,99" transform="translate(218 213)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="26.4"/>
+    <path id="Caminho_23" data-name="Caminho 23" d="M35,0H0V26H35Z" transform="translate(295 183.063) rotate(-5)" fill="#fff"/>
+    <path id="Caminho_24" data-name="Caminho 24" d="M16.658,5.8,76.917.08a17.562,17.562,0,0,1,19.3,18.156L92.591,110.53,97,132H0l4.409-21.47L.711,24.013A17.579,17.579,0,0,1,16.658,5.8Z" transform="translate(262 194)" fill="#fff" fill-rule="evenodd"/>
+    <path id="Caminho_26" data-name="Caminho 26" d="M3.5,7A3.5,3.5,0,1,0,0,3.5,3.5,3.5,0,0,0,3.5,7Z" transform="translate(284 231)" fill="#7e5f61"/>
+    <path id="Caminho_27" data-name="Caminho 27" d="M3.5,7A3.5,3.5,0,1,0,0,3.5,3.5,3.5,0,0,0,3.5,7Z" transform="translate(284 255)" fill="#7e5f61"/>
+    <path id="Caminho_28" data-name="Caminho 28" d="M3.5,7A3.5,3.5,0,1,0,0,3.5,3.5,3.5,0,0,0,3.5,7Z" transform="translate(284 280)" fill="#7e5f61"/>
+    <path id="Caminho_29" data-name="Caminho 29" d="M.083.5H88.614l.7,3.478H-.642Z" transform="translate(266 304)" fill="#ef2840" fill-rule="evenodd"/>
+    <path id="Caminho_30" data-name="Caminho 30" d="M128,8V75h-2V90H2V75H0V8A8,8,0,0,1,8,0H120A8,8,0,0,1,128,8Z" transform="translate(96 235)" fill="#fff" fill-rule="evenodd"/>
+    <path id="Caminho_25" data-name="Caminho 25" d="M3.451,0h6.3l.581,15.125L6.221,37H0L4.224,17.464Z" transform="translate(256 288)" fill="#f0ebe6" fill-rule="evenodd"/>
+    <path id="Caminho_32" data-name="Caminho 32" d="M128,75V11A11,11,0,0,0,117,0H11A11,11,0,0,0,0,11V75Z" transform="translate(96 236)" fill="none" stroke="#d9d4d0" stroke-width="4"/>
+    <path id="Caminho_33" data-name="Caminho 33" d="M0,0H22V4H0Z" transform="translate(102 317)" fill="#d9d4d0"/>
+    <path id="Caminho_34" data-name="Caminho 34" d="M0,0H4V4H0Z" transform="translate(207 317)" fill="#d9d4d0"/>
+    <path id="Caminho_35" data-name="Caminho 35" d="M0,0H4V4H0Z" transform="translate(214 317)" fill="#d9d4d0"/>
+    <path id="Caminho_36" data-name="Caminho 36" d="M0,0H419V79c0,8.837-8.09,16-18.07,16H18.07C8.09,95,0,87.837,0,79Z" transform="translate(69 325)" fill="#fed298"/>
+    <path id="Caminho_37" data-name="Caminho 37" d="M0,0H419V4H0Z" transform="translate(69 325)" fill="#fff"/>
+    <path id="bricks" d="M-744-152a2,2,0,0,1-2-2v-11a2,2,0,0,1,2-2h23a2,2,0,0,1,2,2v11a2,2,0,0,1-2,2Zm-30,0a2,2,0,0,1-2-2v-11a2,2,0,0,1,2-2h23a2,2,0,0,1,2,2v11a2,2,0,0,1-2,2Zm45-18a2,2,0,0,1-2-2v-11a2,2,0,0,1,2-2h23a2,2,0,0,1,2,2v11a2,2,0,0,1-2,2Zm-30,0a2,2,0,0,1-2-2v-11a2,2,0,0,1,2-2h23a2,2,0,0,1,2,2v11a2,2,0,0,1-2,2Zm15-18a2,2,0,0,1-2-2v-11a2,2,0,0,1,2-2h23a2,2,0,0,1,2,2v11a2,2,0,0,1-2,2Zm-30,0a2,2,0,0,1-2-2v-11a2,2,0,0,1,2-2h23a2,2,0,0,1,2,2v11a2,2,0,0,1-2,2Z" transform="translate(1233 350)" fill="#fff"/>
+    <g id="Grupo_2" data-name="Grupo 2" transform="translate(111.122 250.678)">
+      <g id="mr-logo" transform="translate(25.65 0)">
+        <path id="União_3" data-name="União 3" d="M6.945,44.827S-9.451,23.169,8.143,4.9C8.288,4.976,11.751.17,23.365.026A21.724,21.724,0,0,1,38.454,5.132c-.095,0,17.08,15.593.672,39.66a3.971,3.971,0,0,1-2.973.779c-.059,0-2.589-.239-2.169-4.95a2.94,2.94,0,0,1,.612-1.606c.059,0,5.884-8.761,3.883-17.031.059,0-1.559-14.765-15.113-15.137.047,0-14.55-.551-16.049,16.337,0-.037-1.318,7.671,4.674,16.4a3.053,3.053,0,0,1,.467,1.258c.084,0,.719,3.956-1.114,4.866a3.594,3.594,0,0,1-4.4-.875ZM4.26,31.3a41.433,41.433,0,0,1-.179-4.687A25.662,25.662,0,0,1,6.262,15.1c2.877-5.286,5.705-7.563,6.784-8.294a.516.516,0,0,0,.132-.731L12.53,5.2a.492.492,0,0,0-.659-.156c-4,2.206-7.335,9.4-7.335,9.4-2.2,4.895-2.571,8.679-2.277,11.41V24.428a.347.347,0,0,1,.347-.347h1.1a.335.335,0,0,1,.324.239v.1H4V26a.336.336,0,0,1-.324.228H2.606a.348.348,0,0,1-.334-.25A10,10,0,0,0,4.26,31.3ZM33.384,5.2l-.647.875a.515.515,0,0,0,.133.731c1.079.731,3.907,3.008,6.784,8.294a25.66,25.66,0,0,1,2.181,11.47c-.037,1.463-.037,3.176-.18,4.686a9.946,9.946,0,0,0,1.977-5.233.347.347,0,0,1-.287.152H42.278a.347.347,0,0,1-.324-.228V24.273a.347.347,0,0,1,.324-.241h1.067a.348.348,0,0,1,.347.348v1.052a22.517,22.517,0,0,0-2.313-11.024S38.047,7.3,34.044,5.047a.5.5,0,0,0-.66.156ZM4.273,20.282H4.2l-.767-.168L3.1,20.041a.334.334,0,0,1-.264-.395L3.1,18.364a.335.335,0,0,1,.407-.251l1.1.228a.335.335,0,0,1,.251.383v.145l-.263,1.2a.3.3,0,0,1-.145.216.316.316,0,0,1-.179,0Zm37.178-.1a.337.337,0,0,1-.143-.216l-.264-1.2v-.145a.348.348,0,0,1,.264-.287l1.1-.228a.32.32,0,0,1,.26.036.323.323,0,0,1,.148.216l.263,1.283a.323.323,0,0,1-.041.251.319.319,0,0,1-.21.143l-.347.072-.012-.1-.767.168h-.072a.34.34,0,0,1-.18,0Zm-2.038-6.1H39.33a.356.356,0,0,1-.216-.155l-.66-1.127a.318.318,0,0,1,0-.251.279.279,0,0,1,.156-.2l.863-.527a.348.348,0,0,1,.467.12l.635,1.163a.335.335,0,0,1-.12.455l-.875.527a.4.4,0,0,1-.084.009A.408.408,0,0,1,39.413,14.085ZM6.3,14.049l-.863-.527a.325.325,0,0,1-.157-.2.322.322,0,0,1,.038-.253l.659-1.127a.35.35,0,0,1,.468-.12l.875.527a.338.338,0,0,1,.12.168.36.36,0,0,1,0,.251l-.671,1.126a.373.373,0,0,1-.2.156H6.478a.506.506,0,0,1-.18,0Zm29.34-5.142a.347.347,0,0,1-.251-.108L34.5,7.852V7.769a.335.335,0,0,1,.1-.348l.814-.779a.337.337,0,0,1,.48,0l.875.971a.337.337,0,0,1,0,.48l-.108.108-.1.083-.6.564a.325.325,0,0,1-.212.079A.321.321,0,0,1,35.638,8.907Zm-25.708-.1-.6-.563-.083-.084-.12-.108a.346.346,0,0,1,0-.479l.9-.947a.336.336,0,0,1,.479,0l.827.779a.362.362,0,0,1-.024.36v.083l-.9.947a.345.345,0,0,1-.251.108A.319.319,0,0,1,9.929,8.811Z" transform="translate(0)" fill="#ef2840"/>
+      </g>
+    </g>
+  </g>
+</svg>

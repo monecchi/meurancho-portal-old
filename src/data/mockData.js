@@ -3,7 +3,7 @@
 //
 
 // payment methods from ifood.com.br
-export const paymentmethods = [
+export const paymethods = [
     {
         "recommendations": [
             { "option": { "key": "DINHEIRO", "value": "DIN" }, "active": false, "readOnly": false },

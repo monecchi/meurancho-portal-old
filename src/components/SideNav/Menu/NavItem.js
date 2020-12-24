@@ -1,4 +1,4 @@
-import React, { useState, memo, useCallback } from 'react';
+import React, { useState, useCallback, useLayoutEffect, memo } from 'react';
 import { Link, useLocation } from "react-router-dom";
 
 // RestoPizza Icons set
@@ -16,6 +16,7 @@ const NavItem = (props) => {
     const [showSideNav, setShowSideNav] = useState(false);
     const toggleSideNav = useCallback(() => setShowSideNav(value => !value), []);
 
+    console.log('showSideNav: ' + showSideNav);
 
     //useToggleSideNav(navitemRef, () => setShowSideNav(false))
 
@@ -33,6 +34,16 @@ const NavItem = (props) => {
 
     //console.log(pathLink)
 
+    useLayoutEffect(() => {
+        if (!showSideNav) {
+            document.getElementsByClassName("main")[0].classList.remove("main--locked");
+        }
+        // cleanup on unmount, remove css class
+        return () => {
+            document.getElementsByClassName("main")[0].classList.add("main--locked");
+        };
+    }, [showSideNav]);
+
 
     return (
         <>
@@ -40,7 +51,7 @@ const NavItem = (props) => {
                 <li className="menu-list-item" key={item.id}>
                     <Link
                         id={item.name}
-                        onClick={(e) => { handleIsActive(item.name); toggleSideNav(!showSideNav) } }
+                        onClick={(e) => { handleIsActive(item.name); toggleSideNav(false) } }
                         className={(activeLink === item.name && pathLink === item.url ? "sidebar-internal-link sidebar-internal-link--active" : "sidebar-internal-link")}
                         to={item.url && item.url}
                     >

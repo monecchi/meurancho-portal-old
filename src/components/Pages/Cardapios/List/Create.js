@@ -178,22 +178,19 @@ const SelectInput = ({ control, id, name, options, setValue }) => {
   // );
 
   const catIndex = useCallback(
-    e => (
-      e.values.map((val, index) => parseInt(index) )
-    ),
+    options => options.map((opt, index) => console.log('[options['+index+']]') ),
     []
   );
 
   return (
     <Controller
       as={
-        <Select
-        options={options}
-        values={[options[0]]} // `${catIndex}`
-        defaultValue
-        />
+        <Select/>
       }
       control={control}
+      options={options}
+      values={[options[0]]} // [options[0]] `${catIndex}`
+      defaultValue
       id={id}
       name={name}
       searchBy="name"
@@ -210,9 +207,8 @@ const SelectInput = ({ control, id, name, options, setValue }) => {
         // Place your logic here
         //return selected;
       //}}
-      onChange={(values) => setValue(values)}
-      onChangeName="catIndex"
-      onChangeEvent={catIndex}
+     //onChangeName="catIndex"
+     //onChangeEvent={catIndex}
     />
   );
 }
@@ -225,6 +221,7 @@ const fetcher = url => api.get(url).then(res => res.data); // swr fetcher
 //
 export const CreateMenuItemForm = (props) => {
 
+  const { catid } = props;
   //const { categories } = props; // comes from component props
 
   const [formvalues, setFormValues] = useState({
@@ -342,8 +339,6 @@ export const CreateMenuItemForm = (props) => {
 
   console.log('categoriesList array', categoriesList);
 
-  const setCatIndex = () => categoriesList && categoriesList.map((cat, index) => { console.log('cat index ', + index);  return index });
-
   if (!data) {
     return "Nenhuma categoria"
   }
@@ -364,11 +359,16 @@ export const CreateMenuItemForm = (props) => {
               <Form.Label htmlFor="categories">Categoria </Form.Label>
 
               <SelectInput
-                index={`${setCatIndex}`}
                 control={control}
                 id={"categories"}
                 name={"categories"}
-                options={categoriesList}
+                //options={categoriesList}
+                options={categoriesList.map((cat) => ({
+                  _id: cat._id,
+                  name: cat.name
+                }))}
+                //values={}
+                onChange={(values) => { console.log(values); values.map(item => item.value) }}
                 className={`form-control-no-shadow ${errors.price ? "is-invalid" : ""}`}
               />
               {errors.categories && <Form.Text className="text-sm text-danger">Defina um preço!</Form.Text>}

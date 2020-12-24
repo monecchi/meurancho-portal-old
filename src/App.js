@@ -24,10 +24,14 @@ import HeaderMobile from './components/HeaderMobile';
 //
 // Dashboard Pages Components
 //
+import PageLogin from './Login';
+import PrivateRoute from "./PrivateRoute";
 import CardapiosPage from './components/Pages/Cardapios';
 import PageOrders from './components/Pages/Orders';
 import ReviewsPage from './components/Pages/Reviews';
 import PaymentMethodsPage from './components/Pages/PaymentMethods';
+
+import { fakeAuth } from './Login';
 
 // Preloader
 //import Preloader from './components/Preloader';
@@ -35,31 +39,37 @@ import PaymentMethodsPage from './components/Pages/PaymentMethods';
 // Main Styles
 import "./App.scss";
 
+export const LoginPage = () => {
+
+  return (
+    <>
+      <PageLogin />
+    </>
+  )
+}
+
 export const DashHome = () => {
   return (
     <div className="d-flex flex-lg-column flex-md-row flex-sm-row w-100 h-100 justify-content-center align-items-center">
       <h1>Página Inicial</h1>
     </div>
   )
-
 }
 
 export const DashAvaliacoes = () => {
   return (
     <>
-    <ReviewsPage />
+      <ReviewsPage />
     </>
   )
-
 }
 
 export const DashCardapios = () => {
   return (
     <>
-    <CardapiosPage />
+      <CardapiosPage />
     </>
   )
-
 }
 
 export const DashTermos = () => {
@@ -93,27 +103,42 @@ export const DashFinanceiro = () => {
 // spots: once for the sidebar and once in the main
 // content section. All routes are in the same
 // order they would appear in a <Switch>.
+
+const protectedRoutes = {
+  path: "/login",
+  exact: true,
+  main: () => <LoginPage />
+};
+
 const routes = [
+  {
+    path: "/login",
+    exact: true,
+    sidebar: () => <></>,
+    main: () => <LoginPage />
+  },
   {
     path: "/home",
     exact: true,
-    sidebar: () => <MainPage title={''} children={DashHome()} />,
-    main: () => <></>
+    sidebar: () => <></>,
+    main: () => <MainPage title={''} children={DashHome()} />
   },
   {
     path: "/pedidos",
-    sidebar: () => <MainPage title="" children={PageOrders()} />,
-    main: () => <></>
+    exact: true,
+    sidebar: () => <></>,
+    main: () => <MainPage title="" children={PageOrders()} />
   },
   {
     path: "/cardapio",
+    exact: true,
     sidebar: () => <></>,
     main: () => <MainPage title="Cardápio" subtitle="Gerencie seus Cardápio no site." children={DashCardapios()} />
   },
   {
     path: "/avaliacoes",
     exact: true,
-    sidebar: () => <></>,
+    sidebar: () => <></>, // an additional sidebar can be rendered here, such as on an email app view
     main: () => <MainPage title="Avaliações" subtitle="Feedback e avaliações de clientes." children={DashAvaliacoes()} />
   },
   {
@@ -131,19 +156,22 @@ const routes = [
   {
     path: "*",
     sidebar: () => <Redirect to="/home" />,
-    main: () => <Redirect to="/home" />
+    main: () => <Redirect to="login" />
   }
 ];
 
 // App 
 const App = (props) => {
 
+  //const location = useLocation();
+
   const sidenavRef = useRef();
+  const routerRef = React.createRef();
 
   const [showSideNav, setShowSideNav] = useState(false);
 
   useOnClickOutside(sidenavRef, () => setShowSideNav(false));
-  
+
   const isMobile = useMediaQuery('(max-width: 569px)');
 
   // Set toggled state on menu toggle click with useCallback
@@ -175,30 +203,34 @@ const App = (props) => {
   //     }
   // }
 
-  const onChangeRouteHideSideNav = () => {
-    console.log('Current URL: ' + window.location.pathname);
-  }
-
   useEffect(() => {
+    let drawer = document.getElementsByClassName("main")[0];
     if (!showSideNav) {
-      document.getElementsByClassName("main")[0].classList.remove("main--locked");
+      if (drawer) {
+        drawer.classList.remove("main--locked");
+      }
     }
     // cleanup on unmount, remove css class
     return () => {
-      document.getElementsByClassName("main")[0].classList.add("main--locked");
+      drawer.classList.add("main--locked");
     };
   }, [showSideNav]);
 
   return (
-    <Router>
-    <div className="app">
-      <div>
-        <div className="main main--no-sidebar-scroll">
-          {isMobile && (<HeaderMobile onClick={toggleSideNav} showSideNav={showSideNav}  />)}
-          {isMobile && (<div className="clickoutsidebondary" ref={sidenavRef}><SideNavOnDrawer isMobile={isMobile} toggleSideNav={toggleSideNav} /></div>)}
-          <div className="main__body">
-              {/*<SideBar />*/}
-              {!isMobile && (<SideNav isMobile={isMobile} />)}
+    <Router ref={routerRef}>
+      <div className="app">
+        <div>
+          <div className="main main--no-sidebar-scroll">
+            {fakeAuth.isAuthenticated && isMobile && (<HeaderMobile onClick={toggleSideNav} showSideNav={showSideNav} />)}
+            {fakeAuth.isAuthenticated && isMobile && (<div className="clickoutsidebondary" ref={sidenavRef}><SideNavOnDrawer isMobile={isMobile} toggleSideNav={toggleSideNav} /></div>)}
+            <div className="main__body">
+
+              {!isMobile && (
+                fakeAuth.isAuthenticated &&  (
+                  <SideNav isMobile={isMobile} />
+                )
+              )}
+
               <Switch>
                 {routes.map((route, index) => (
                   // You can render a <Route> in as many places
@@ -213,15 +245,19 @@ const App = (props) => {
                     path={route.path}
                     exact={route.exact}
                     children={<route.sidebar />}
-                    onUpdate={()=>onChangeRouteHideSideNav}
                   />
                 ))}
               </Switch>
 
               <Switch>
                 {routes.map((route, index) => (
-                  // Render more <Route>s with the same paths as
-                  // above, but different components this time.
+                  // You can render a <Route> in as many places
+                  // as you want in your app. It will render along
+                  // with any other <Route>s that also match the URL.
+                  // So, a sidebar or breadcrumbs or anything else
+                  // that requires you to render multiple things
+                  // in multiple places at the same URL is nothing
+                  // more than multiple <Route>s.
                   <Route
                     key={index}
                     path={route.path}
@@ -230,10 +266,17 @@ const App = (props) => {
                   />
                 ))}
               </Switch>
+
+              <Switch>
+                <Route path={protectedRoutes.path} exact={protectedRoutes.exact} children={<protectedRoutes.main />}>
+                  <Redirect to={{ pathname: "/login", state: { from: '' } }} />
+                </Route>
+              </Switch>
+
+            </div>
           </div>
         </div>
       </div>
-    </div>
     </Router>
   );
 }

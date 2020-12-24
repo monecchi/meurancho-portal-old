@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { paymentmethods } from '../../../data/mockData';
+import { paymethods } from '../../../data/mockData';
 
 // RestoPizza Icons set
 import Icon from '../../Icon';
@@ -69,7 +69,7 @@ const PaymentMethodsPage = () => {
 
     useEffect(() => {
 
-        getPaymentMethods(paymentmethods).then(res => {
+        getPaymentMethods(paymethods).then(res => {
             setPayments({
                 paymentMethods: res[0],
                 recommendations: res[0].recommendations,
@@ -80,7 +80,7 @@ const PaymentMethodsPage = () => {
 
     }, []);
 
-    const { paymentMethods, recommendations } = payments;
+    const { paymentMethods, recommendations, isLoading } = payments;
 
     //console.log(recommendations);
 
@@ -96,8 +96,6 @@ const PaymentMethodsPage = () => {
 
     let recommendedMethodsGroups = toChunkArray(recommendations, 3); //toChunkArray(recommendations, 3);
     console.log(recommendedMethodsGroups);
-
-    const { isLoading } = payments;
 
     const loadingItems = toChunkArray([0,1,2,3,4], 3); // Fake chuncked loadingItems array
 

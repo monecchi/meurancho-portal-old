@@ -8,7 +8,7 @@ export const useToggleSideNav = (ref, handler) => {
     () => {
       const clickListener = event => {
         // Do action if clicking ref's element or descendent elements
-        if (!ref.current || ref.current.contains(event.target)) {
+        if (!event.target) {
           return;
         } else {
           handler(event);
